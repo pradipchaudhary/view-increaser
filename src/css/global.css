@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    padding: 5rem 10%;
+    background-color: #464646;
+    color: #efefef;
+}
+.success {
+    background-color: green;
+    color: white;
+}
+
+.error {
+    background-color: red;
+    color: white;
+}
+.warning {
+    background-color: yellow;
+    color: white;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #464646;
+}
+
+.buttons {
+    display: flex;
+}
