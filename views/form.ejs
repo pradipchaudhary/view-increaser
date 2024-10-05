@@ -126,7 +126,7 @@
         <div class="container">
             <div class="header">
                 <h1>Views Increaser</h1>
-                <p>Enter a URL to increase views every 15 seconds:</p>
+                <p>Enter a URL to increase views every 10 seconds:</p>
             </div>
 
             <form action="/add-url" method="POST" id="url-form">
@@ -174,7 +174,7 @@
             // Function to update countdown timer in real time
             function startCountdown(url) {
                 clearInterval(countdownInterval); // Clear any previous countdown
-                countdownTime = 10; // Reset countdown time to 15 seconds
+                countdownTime = 10; // Reset countdown time to 10 seconds
 
                 countdownInterval = setInterval(() => {
                     countdownTime--;
@@ -191,19 +191,29 @@
                 }, 1000); // Countdown updates every second
             }
 
-            // Function to open the URL in a new tab, hold for 15 seconds, then close it
+            // Function to open the URL in a new tab, hold for 10 seconds, then close it
             function hitUrlAndOpenTab(url) {
                 const newTab = window.open(url, "_blank");
-                hitCount += 1; // Increment hit count
-                document.getElementById("hit-count").textContent = hitCount;
 
-                console.log(`Opened URL: ${url}, Hit Count: ${hitCount}`);
+                // Check if the pop-up was blocked
+                if (newTab) {
+                    // If the tab successfully opens
+                    hitCount += 1; // Increment hit count
+                    document.getElementById("hit-count").textContent = hitCount;
 
-                // Hold the tab open for 15 seconds, then close it
-                setTimeout(() => {
-                    newTab.close();
-                    console.log(`Closed URL: ${url}`);
-                }, 10000); // 15 seconds
+                    console.log(`Opened URL: ${url}, Hit Count: ${hitCount}`);
+
+                    // Close the tab after 10 seconds
+                    setTimeout(() => {
+                        newTab.close();
+                        console.log(`Closed URL: ${url}`);
+                    }, 10000); // 10 seconds
+                } else {
+                    // Pop-up was blocked
+                    alert(
+                        "Pop-up was blocked! Please allow pop-ups for this site."
+                    );
+                }
 
                 // Wait for 5 seconds after closing the tab before the next hit
                 setTimeout(() => {
@@ -229,7 +239,7 @@
                 } else {
                     // Start increasing views
                     console.log(
-                        `Starting to hit URL: ${currentUrl} every 15 seconds...`
+                        `Starting to hit URL: ${currentUrl} every 10 seconds...`
                     );
                     startCountdown(currentUrl);
                     toggleButton.textContent = "Stop Increasing Views"; // Change button text
@@ -239,7 +249,7 @@
 
             function stopIncreasingViews() {
                 clearInterval(countdownInterval); // Stop the countdown
-                countdownTime = 10; // Reset countdown time to 15 seconds
+                countdownTime = 10; // Reset countdown time to 10 seconds
                 document.getElementById("countdown").textContent =
                     countdownTime; // Reset countdown display
                 toggleButton.textContent = "Start Increasing Views"; // Change button text back
