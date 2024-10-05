@@ -3,15 +3,76 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Primary Meta Tags -->
+        <title>
+            View Increaser - Increase Your Website Views Automatically
+        </title>
+        <meta
+            name="title"
+            content="View Increaser - Increase Your Website Views Automatically"
+        />
+        <meta
+            name="description"
+            content="Automatically increase your website views every 10 seconds. Simply enter a URL, and the tool will boost your page views!"
+        />
+        <meta
+            name="keywords"
+            content="view increaser, website views, SEO tool, increase website traffic, URL booster"
+        />
+        <meta name="author" content="Pradip Chaudhary" />
+        <meta name="robots" content="index, follow" />
+        <meta name="revisit-after" content="7 days" />
+
         <!-- Favicon -->
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <title>View Increaser</title>
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://view-increaser.onrender.com/"
+        />
+        <meta
+            property="og:title"
+            content="View Increaser - Increase Your Website Views Automatically"
+        />
+        <meta
+            property="og:description"
+            content="Automatically increase your website views every 10 seconds. Enter a URL and the tool will boost your page views!"
+        />
+        <meta
+            property="og:image"
+            content="https://view-increaser.onrender.com/images/preview.png"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+            property="twitter:url"
+            content="https://view-increaser.onrender.com"
+        />
+        <meta
+            property="twitter:title"
+            content="View Increaser - Increase Your Website Views Automatically"
+        />
+        <meta
+            property="twitter:description"
+            content="Automatically increase your website views every 10 seconds. Enter a URL and the tool will boost your page views!"
+        />
+        <meta
+            property="twitter:image"
+            content="https://view-increaser.onrender.com/images/preview.png"
+        />
+
+        <!-- Fonts and Stylesheets -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet"
         />
+
         <style>
             /* Global styles and background */
             * {
@@ -26,7 +87,6 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
                 font-family: "Roboto", sans-serif;
                 background-image: linear-gradient(
                     to top,
@@ -37,7 +97,6 @@
                     #e9e9e7 100%
                 );
                 color: #000000;
-                margin: 0;
             }
 
             .container {
@@ -207,95 +266,73 @@
             let hitCount = 0;
             let countdownTime = 10;
             let countdownInterval = null;
-            let isIncreasing = false; // To track whether the view increaser is active
+            let isIncreasing = false;
 
-            // Function to update countdown timer in real time
             function startCountdown(url) {
-                clearInterval(countdownInterval); // Clear any previous countdown
-                countdownTime = 10; // Reset countdown time to 10 seconds
+                clearInterval(countdownInterval);
+                countdownTime = 10;
 
                 countdownInterval = setInterval(() => {
                     countdownTime--;
-
-                    // Update countdown timer in DOM
                     document.getElementById("countdown").textContent =
                         countdownTime;
 
-                    // When countdown hits 0, open and close the tab, then restart countdown
                     if (countdownTime === 0) {
                         hitUrlAndOpenTab(url);
-                        countdownTime = 10; // Reset countdown
+                        countdownTime = 10;
                     }
-                }, 1000); // Countdown updates every second
+                }, 1000);
             }
 
-            // Function to open the URL in a new tab, hold for 10 seconds, then close it
             function hitUrlAndOpenTab(url) {
                 const newTab = window.open(url, "_blank");
 
-                // Check if the pop-up was blocked
                 if (newTab) {
-                    // If the tab successfully opens
-                    hitCount += 1; // Increment hit count
+                    hitCount += 1;
                     document.getElementById("hit-count").textContent = hitCount;
 
-                    console.log(`Opened URL: ${url}, Hit Count: ${hitCount}`);
-
-                    // Close the tab after 10 seconds
                     setTimeout(() => {
                         newTab.close();
-                        console.log(`Closed URL: ${url}`);
-                    }, 10000); // 10 seconds
+                    }, 10000);
                 } else {
-                    // Pop-up was blocked
                     alert(
                         "Pop-up was blocked! Please allow pop-ups for this site."
                     );
                 }
 
-                // Wait for 5 seconds after closing the tab before the next hit
                 setTimeout(() => {
                     if (currentUrl === url) {
-                        startCountdown(url); // Restart countdown for the next hit
+                        startCountdown(url);
                     }
-                }, 5000); // 5-second wait before next hit
+                }, 5000);
             }
 
-            // Handle form submission to start hitting the URL
             const form = document.getElementById("url-form");
             const toggleButton = document.getElementById("toggle-button");
 
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
-
-                // Get the URL from the input field
                 currentUrl = document.getElementById("url-input").value;
 
                 if (isIncreasing) {
-                    // If already increasing, stop the process
                     stopIncreasingViews();
                 } else {
-                    // Start increasing views
-                    console.log(
-                        `Starting to hit URL: ${currentUrl} every 10 seconds...`
-                    );
-                    startCountdown(currentUrl);
-                    toggleButton.textContent = "Stop Increasing Views"; // Change button text
+                    startIncreasingViews();
                 }
-                isIncreasing = !isIncreasing; // Toggle the state
             });
 
+            function startIncreasingViews() {
+                toggleButton.textContent = "Stop Increasing Views";
+                isIncreasing = true;
+
+                startCountdown(currentUrl);
+            }
+
             function stopIncreasingViews() {
-                clearInterval(countdownInterval); // Stop the countdown
-                countdownTime = 10; // Reset countdown time to 10 seconds
-                document.getElementById("countdown").textContent =
-                    countdownTime; // Reset countdown display
-                toggleButton.textContent = "Start Increasing Views"; // Change button text back
-                isIncreasing = false; // Update the state
-                currentUrl = null; // Clear current URL
-                hitCount = 0; // Reset hit count
-                document.getElementById("hit-count").textContent = hitCount; // Reset hit count display
-                console.log("Stopped increasing views.");
+                toggleButton.textContent = "Start Increasing Views";
+                isIncreasing = false;
+
+                clearInterval(countdownInterval);
             }
         </script>
     </body>
