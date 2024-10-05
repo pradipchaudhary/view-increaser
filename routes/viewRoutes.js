@@ -2,25 +2,25 @@
 
 import express from "express";
 import { addUrl, getUrls } from "../models/viewModel.js";
-import { hitUrl } from "../controllers/viewController.js";
+import { hitUrlWithProxy } from "../controllers/viewController.js";
+import schedule from "node-schedule";
 const router = express.Router();
 
-// Form to add URL
+// Render form to add URL and show current hit count
 router.get("/", (req, res) => {
     res.render("form", { urls: getUrls() });
 });
 
-// Handle form submission
+// Handle form submission and schedule URL hits every 30 seconds
 router.post("/add-url", (req, res) => {
     const { url } = req.body;
     addUrl(url);
-    res.redirect("/");
-});
 
-// Endpoint to trigger hitting the URL (for testing purposes)
-router.get("/hit-url/:url", (req, res) => {
-    const url = req.params.url;
-    hitUrl(url);
-    res.send(`Hitting URL: ${url}`);
+    // Schedule a job to hit the URL every 30 seconds using rotating proxies
+    schedule.scheduleJob(`*/30 * * * * *`, () => {
+        hitUrlWithProxy(url);
+    });
+
+    res.redirect("/");
 });
 export default router;

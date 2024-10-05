@@ -1,25 +1,30 @@
 // controllers/viewController.js
 
 import axios from "axios";
-import { HttpsProxyAgent } from "https-proxy-agent";
-import { getRandomProxy, increaseViewCount } from "../models/viewModel.js";
+import { increaseViewCount } from "../models/viewModel.js";
+import { getNextProxy } from "../models/proxyPool.js";
 
-// Function to hit a URL with a random proxy and increase the view count
-const hitUrl = async (url) => {
+// Function to hit a URL using a proxy and increase the view count
+const hitUrlWithProxy = async (url) => {
+    const proxy = getNextProxy(); // Get the next proxy from the pool
+
+    const config = {
+        proxy: {
+            host: proxy.host,
+            port: proxy.port,
+        },
+        timeout: 10000, // Optional: Set a timeout to handle slow or unreachable proxies
+    };
+
     try {
-        const proxy = getRandomProxy(); // Select a random proxy
-        const agent = new HttpsProxyAgent(proxy);
-
-        await axios.get(url, {
-            httpsAgent: agent,
-        });
-
-        // Increment the view count on successful request
-        increaseViewCount(url);
-        console.log(`Hit URL: ${url} using Proxy: ${proxy}`);
+        await axios.get(url, config); // Make the request with the proxy
+        increaseViewCount(url); // Increase the view count
+        console.log(`Hit URL: ${url} from IP: ${proxy.host}`);
     } catch (error) {
-        console.error(`Error hitting URL ${url}:`, error.message);
+        console.error(
+            `Error hitting URL ${url} via proxy ${proxy.host}:`,
+            error.message
+        );
     }
 };
-
-export { hitUrl };
+export { hitUrlWithProxy };
