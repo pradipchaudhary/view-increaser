@@ -1,4 +1,4 @@
-# View Increaser
+# [View Increaser](https://view-increaser.onrender.com/)
 
 A simple web-based tool that automatically increases the views on a given URL at regular intervals by simulating real user hits. The tool opens the specified URL in a new tab, holds it open for 15 seconds, and then closes the tab, repeating the process every 15 seconds.
 
@@ -12,7 +12,7 @@ A simple web-based tool that automatically increases the views on a given URL at
 
 ## Demo
 
-![Demo GIF](demo.jpg)
+[![Demo GIF](demo.gif)](https://view-increaser.onrender.com/)
 
 ## Installation
 
@@ -36,16 +36,6 @@ A simple web-based tool that automatically increases the views on a given URL at
 2. Click **"Start Increasing Views"** to begin the process.
 3. The system will automatically simulate user visits to the URL every 15 seconds.
 4. You can stop the process at any time by clicking the **"Stop Increasing Views"** button.
-
-## Screenshots
-
-### Initial Screen
-
-![Initial Screen](screenshots/screen1.png)
-
-### Increasing Views
-
-![Increasing Views](screenshots/screen2.png)
 
 ## Built With
 
