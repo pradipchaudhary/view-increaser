@@ -20,6 +20,7 @@
         "ejs": "^3.1.10",
         "express": "^4.21.0",
         "https-proxy-agent": "^7.0.5",
-        "node-schedule": "^2.1.1"
+        "node-schedule": "^2.1.1",
+        "url": "^0.11.4"
     }
 }
