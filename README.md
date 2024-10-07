@@ -1,5 +1,10 @@
 # 🌟[View Increaser](https://view-increaser.onrender.com/)
 
+[![GitHub issues](https://img.shields.io/github/issues/pradipchaudhary/view-increaser)](https://github.com/pradipchaudhary/view-increaser/issues)
+[![GitHub forks](https://img.shields.io/github/forks/pradipchaudhary/view-increaser)](https://github.com/pradipchaudhary/view-increaser/network)
+[![GitHub stars](https://img.shields.io/github/stars/pradipchaudhary/view-increaser)](https://github.com/pradipchaudhary/view-increaser/stargazers)
+[![GitHub license](https://img.shields.io/github/license/pradipchaudhary/view-increaser)](https://github.com/pradipchaudhary/view-increaser/blob/main/LICENSE)
+
 A simple web-based tool that automatically increases the views on a given URL at regular intervals by simulating real user hits. The tool opens the specified URL in a new tab, holds it open for 10 seconds, and then closes the tab, repeating the process every 5 seconds.
 
 ## ✨ Key Features
