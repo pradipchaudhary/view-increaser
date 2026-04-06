@@ -264,13 +264,13 @@
         <script>
             let currentUrl = null;
             let hitCount = 0;
-            let countdownTime = 10;
+            let countdownTime = 5; // 10
             let countdownInterval = null;
             let isIncreasing = false;
 
             function startCountdown(url) {
                 clearInterval(countdownInterval);
-                countdownTime = 10;
+                countdownTime = 5;
 
                 countdownInterval = setInterval(() => {
                     countdownTime--;
@@ -279,7 +279,7 @@
 
                     if (countdownTime === 0) {
                         hitUrlAndOpenTab(url);
-                        countdownTime = 10;
+                        countdownTime = 5;
                     }
                 }, 1000);
             }
