@@ -46,15 +46,6 @@ Stop anytime, and the hit counter resets.
 -   ⏲️ **Custom Time Intervals**: Allow users to set custom intervals between hits.
 -   📊 **Advanced Analytics**: Provide detailed statistics and metrics for each URL.
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.
 
 ## 📜 License
 
