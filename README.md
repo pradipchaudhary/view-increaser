@@ -1,58 +1,190 @@
-# 🌟[View Increaser](https://view-increaser.onrender.com/)
+# 🚀 View Increaser
 
-[![GitHub issues](https://img.shields.io/github/issues/pradipchaudhary/view-increaser)](https://github.com/pradipchaudhary/view-increaser/issues)
-[![GitHub forks](https://img.shields.io/github/forks/pradipchaudhary/view-increaser)](https://github.com/pradipchaudhary/view-increaser/network)
-[![GitHub stars](https://img.shields.io/github/stars/pradipchaudhary/view-increaser)](https://github.com/pradipchaudhary/view-increaser/stargazers)
-[![GitHub license](https://img.shields.io/github/license/pradipchaudhary/view-increaser)](https://github.com/pradipchaudhary/view-increaser/blob/main/LICENSE)
+<p align="center">
+  <a href="https://view-increaser.onrender.com/">
+    <img src="https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=render" />
+  </a>
 
-A simple web-based tool that automatically increases the views on a given URL at regular intervals by simulating real user hits. The tool opens the specified URL in a new tab, holds it open for 10 seconds, and then closes the tab, repeating the process every 5 seconds.
+  <a href="https://github.com/pradipchaudhary/view-increaser/stargazers">
+    <img src="https://img.shields.io/github/stars/pradipchaudhary/view-increaser?style=for-the-badge" />
+  </a>
 
-## ✨ Key Features
+  <a href="https://github.com/pradipchaudhary/view-increaser/network/members">
+    <img src="https://img.shields.io/github/forks/pradipchaudhary/view-increaser?style=for-the-badge" />
+  </a>
 
--   🔁 **Auto Hits Every 15 Seconds**: Boost URL views effortlessly.
--   🔢 **Live Hit Counter**: Track how many times the URL is visited.
--   ⏲️ **Countdown Timer**: See when the next hit will happen.
--   🛑 **Start/Stop**: Dynamically control the process with a single click.
--   📐 **MVC Architecture**: Clean, scalable codebase.
+  <a href="https://github.com/pradipchaudhary/view-increaser/issues">
+    <img src="https://img.shields.io/github/issues/pradipchaudhary/view-increaser?style=for-the-badge" />
+  </a>
 
-## 🌍 Demo
-
-Check out the [Live Demo](https://view-increaser.onrender.com) to see **View Increaser** in action! 🔥
-
-[![Demo GIF](demo.gif)](https://view-increaser.onrender.com/)
-
-## 💡 How to Use
-
-1. **Enter URL** → 2. **Start** → 3. **Watch the hits increase!**
-
-Stop anytime, and the hit counter resets.
-
-## 🛠️ Tech Stack
-
--   **Node.js**, **Express.js**, **EJS** for the backend.
--   **HTML/CSS** for the frontend.
--   **MVC Architecture** for maintainability.
-
-## 🚀 How It Works
-
--   The application simulates a real user visit by opening the given URL in a new tab and keeping it open for 15 seconds.
--   After each visit, the hit counter is updated, and the process repeats every 15 seconds.
--   You can stop the process at any time, and the hit counter, URL, and countdown timer are reset.
-
-## 🌟 Future Enhancements
-
--   🔐 **User Authentication**: Allow users to log in and track their URLs.
--   🌐 **Multiple URL Support**: Increase views for multiple URLs simultaneously.
--   ⏲️ **Custom Time Intervals**: Allow users to set custom intervals between hits.
--   📊 **Advanced Analytics**: Provide detailed statistics and metrics for each URL.
-
-
-## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+  <a href="https://github.com/pradipchaudhary/view-increaser/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/pradipchaudhary/view-increaser?style=for-the-badge" />
+  </a>
+</p>
 
 ---
 
-**Author**: [Pradip Chaudhary](https://github.com/pradipchaudhary)
+## 🌟 Overview
 
-Feel free to contribute, give feedback, or raise issues. Enjoy increasing those views!
+**View Increaser** is a lightweight web-based utility that automatically opens a target URL in a browser tab at configurable intervals to simulate repeated page visits.
+
+The project is designed for educational purposes, browser automation experiments, and learning how interval-based client-side interactions work using JavaScript and Node.js.
+
+---
+
+## 🔥 Live Demo
+
+👉 **Website:**
+https://view-increaser.onrender.com/
+
+---
+
+## ✨ Features
+
+* 🔁 Automatic URL opening at fixed intervals
+* 📊 Real-time hit counter
+* ⏳ Countdown timer before the next visit
+* ▶️ Start & Stop controls
+* 🧩 Clean MVC architecture
+* ⚡ Lightweight and simple UI
+* 📱 Responsive design
+
+---
+
+## 🖥️ Preview
+
+<p align="center">
+  <img src="./demo.gif" width="100%" alt="View Increaser Demo" />
+</p>
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Backend
+
+* Node.js
+* Express.js
+* EJS
+
+### Architecture
+
+* MVC Pattern
+
+---
+
+## 📂 Project Structure
+
+```bash
+view-increaser/
+│
+├── controllers/
+├── models/
+├── routes/
+├── views/
+├── public/
+├── app.js
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/pradipchaudhary/view-increaser.git
+```
+
+Move into the project directory:
+
+```bash
+cd view-increaser
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm start
+```
+
+---
+
+## 🚀 Usage
+
+1. Enter a valid URL
+2. Click the **Start** button
+3. The application will automatically open the URL at regular intervals
+4. Monitor the live counter and countdown timer
+5. Click **Stop** anytime to end the process
+
+---
+
+## 💡 Use Cases
+
+* Browser automation experiments
+* JavaScript interval handling practice
+* Educational demos
+* Learning MVC architecture
+* Understanding client-side browser interactions
+
+---
+
+## 🌱 Future Improvements
+
+* 🔐 Authentication system
+* 🌐 Multiple URL support
+* ⏲️ Custom interval configuration
+* 📈 Analytics dashboard
+* 💾 Database integration
+* 📊 History tracking
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to improve this project:
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+See the LICENSE file for more information.
+
+---
+
+## 👨‍💻 Author
+
+### Pradip Chaudhary
+
+* GitHub: https://github.com/pradipchaudhary
+* Portfolio: https://www.pradipchaudhary.com.np/
+
+---
+
+<p align="center">
+  Made with ❤️ using Node.js & JavaScript
+</p>
